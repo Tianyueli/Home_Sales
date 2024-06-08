@@ -1,6 +1,10 @@
 # Home_Sales
 
-* Overview: I used SparkSQL to determine key metrics about home sales data and created temporary views, partitioned the data, cached and uncached a temporary table, and verified that the table has been uncached.
+* Overview: I used SparkSQL to determine key metrics about home sales data and created temporary views, data partition, and caching of data to evaluate their impact on data performance
+
+* Findings:
+  * After caching the data, the runtime for processing a standard query reduced 36%.
+  *  Parqueting the dataframe generally helps optimizes the Spark storage and reduces the amount of reading Spark has to do; In this situation, the run time increased 1.3% potentially due to the smaall size of this dataset, parqueting was not necessary and could have minimally increased the effort to reading data.
 
 References
 
